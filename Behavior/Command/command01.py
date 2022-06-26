@@ -26,8 +26,11 @@
     要很多类和对象协作，要确保正确
     每个单独的命令都是一个类，增加了实现和维护的类的数量
 """
+
+
 class Command:
     """声明命令模式接口"""
+
     def __init__(self, obj):
         self.obj = obj
 
@@ -37,12 +40,14 @@ class Command:
 
 class ConcreteCommand(Command):
     """实现命令模式接口"""
+
     def execute(self):
         self.obj.run()
 
 
 class Invoker:
     """接受命令并执行命令的接口"""
+
     def __init__(self):
         self._commands = []
 
@@ -59,6 +64,7 @@ class Invoker:
 
 class Receiver:
     """具体动作"""
+
     def __init__(self, word):
         self.word = word
 
@@ -80,4 +86,3 @@ def client():
 
 if __name__ == '__main__':
     client()
-
